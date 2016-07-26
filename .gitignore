@@ -1,0 +1,7 @@
+/env
+*pyc
+*secrets*
+.DS_Store
+.idea/
+hackerrank.iml
+node_modules/
