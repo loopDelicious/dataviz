@@ -20,7 +20,7 @@ def index():
 def read_data():
     """Load up raw data."""
 
-    with open("hackerrank.csv") as data_file:
+    with open("data.js") as data_file:
         day_data = data_file.readlines()
         day_data = day_data.split(',')
 
@@ -50,6 +50,10 @@ def error():
 
 if __name__ == "__main__":
 
-    PORT = int(os.environ.get("PORT", 5000))
-    DEBUG = "NO_DEBUG" not in os.environ
-    app.run(host="0.0.0.0", port=PORT, debug=DEBUG)
+
+    app.debug = True
+    app.run()
+    # PORT = int(os.environ.get("PORT", 5000))
+    # app.debug = True
+    # # DEBUG = "NO_DEBUG" not in os.environ
+    # app.run(host="0.0.0.0", port=PORT, debug=DEBUG)

@@ -1,25 +1,17 @@
-// Using CommonJS
-// var Chart = require('src/chart.js')
-
-// ajax get request to load data points
-// $(document).ready(function(e) {
-//   $.ajax({
-//     type: "GET",
-//     url: '/data',
-//     success: function(data) { 
-//       var days = data['days'];
-//       var submissions = data['submissions'];
-//       var topics = data['topics'];
-//     }
-//   });
-// });
-
-// Any of the following formats may be used
-// var ctx = document.getElementById("myChart");
-// var ctx = document.getElementById("myChart").getContext("2d");
-// var ctx = $("#myChart");
+function readData() {
+    var days = [];
+    var submissions = [];
+    var topics = [];
+    for (var i = 0; i < HRdata.length; i++) {
+        days.push(HRdata[0]);
+        submissions.push(HRdata[1]);
+        topics.push(HRdata[2]);
+    }
+}
+readData();
 
 // Example:
+//get chart canvas
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -58,41 +50,4 @@ var myChart = new Chart(ctx, {
     }
 });
 
-
-// var ctx = document.getElementById("30days");
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: days,
-//         datasets: [{
-//             label: '# of Submissions',
-//             data: submissions,
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255,99,132,1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero:true
-//                 }
-//             }]
-//         }
-//     }
-// });
+myChart.Bar(data);
