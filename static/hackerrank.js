@@ -5,17 +5,18 @@ var topics = [];
 function readData() {
 
     for (var i = 0; i < HRdata.length; i++) {
-        days.push(HRdata[0]);
-        submissions.push(HRdata[1]);
-        topics.push(HRdata[2]);
+        days.push(HRdata[i][0]);
+        submissions.push(HRdata[i][1]);
+        topics.push(HRdata[i][2]);
     }
 }
 
+readData();
 
 //get chart canvas
 var ctx = document.getElementById("myChart");
 
-//instantiate chart object
+// instantiate chart object
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
